@@ -7,7 +7,7 @@ const userData = {
 }
 
 function Brt(isData: boolean, age: number, name: string): string {
-    if(isData === true) {
+    if (isData === true) {
         return `Congratulations ${name} `
     } else {
         return `Sorry bro!`
@@ -47,7 +47,7 @@ function Brtz(data: {
     isData: boolean,
     age: number,
     name: string
-    mess:{error: string}
+    mess: { error: string }
 
 }): string {
     if (data.isData) {
@@ -79,7 +79,6 @@ const number: number[][] = [[1, 2], [1]];
 // dep.push(1);
 dep.push('f');
 // console.log(dep);
-
 
 
 //hw
@@ -143,8 +142,6 @@ uple.push(6);
 // console.log(uple);
 
 
-
-
 //union--------------------------------------------------------------
 const mess: string | number = 5;
 const me: string[] | number[] = ['a'];
@@ -159,12 +156,12 @@ function f(msg: string | number) {
 
 f(55);
 
-function met(msg: string | number): void{
-    console.log(msg+'a');
+function met(msg: string | number): void {
+    console.log(msg + 'a');
 }
+
 // met('e')
 // met(typeof 7)
-
 
 
 //narrowing
@@ -177,6 +174,7 @@ function ff(msg: string | number) {
         console.log(msg.toExponential())
     }
 }
+
 // ff(55);
 // ff('sss');
 
@@ -189,7 +187,7 @@ function fff(msg: string[] | number) {
 }
 
 const printe = (a: number | string, b: number) => {
-    if(a === b) {
+    if (a === b) {
         console.log(a, b)
     }
 }
@@ -197,20 +195,19 @@ const printe2 = (a: number[] | string) => {
     console.log(a.slice(0, 3))
 }
 
-const check = (r: {sys: number} | {user: number}):void =>{
-    if ('sys' in r ) {
+const check = (r: { sys: number } | { user: number }): void => {
+    if ('sys' in r) {
         console.log(r.sys);
     } else {
         console.log(r.user);
     }
 }
 
-function logH (x: string | Date) {
+function logH(x: string | Date) {
     if (x instanceof Date) {
         // console.log(x.getDate())
     }
 }
-
 
 
 //literal types----------------------------------------------------------
@@ -222,29 +219,58 @@ user = 'key';
 
 
 let msg: 'hello' = 'hello';
-msg='hello';
+msg = 'hello';
 // msg='g';
 
-function startServer(protocol: 'http' | 'https', port: 3000 | 3001): 'Server started' {
-    console.log(`start on ${protocol}://${port}`)
-    return 'Server started'
-}
-startServer('http', 3000);
 
+const port3000: number = 3000;
+const port3001: number = 3001;
+
+
+function startServer(
+    protocol: 'http' | 'https',
+    port: 3000 | 3001
+): 'Server started' {
+
+    if (port === port3000 || port === port3001) {
+        // console.log(`start on ${protocol}://${port}`)
+    } else {
+        console.error('Server not started')
+    }
+    return "Server started"
+}
+
+startServer('http', 3000);
 
 
 //literal types
 // делаем типа объекты в которые закидываем
 
-type Animationw = 'ease' | 'ease-out' | 'ease-in';
-function createD (
-    id: Animationw = 'ease',
-    name: string,
-    dur: number,
+// type Animationw = 'ease' | 'ease-out' | 'ease-in';
+//
+// function createD(
+//     id: Animationw = 'ease',
+//     name: string,
+//     dur: number,
+// ): void {
+//     // console.log('e')
+// }
 
 
-): void {
-    // console.log('e')
+function createAnimation(
+    id: string | number,
+    animName: string,
+    timingFunc: 'ease' | 'ease-out',
+    duration: number,
+):void {
+
+    console.log(`${animName} ${timingFunc} ${duration}`)
+
+    // const elem = document.querySelector(`#${id}`) as HTMLElement;
+    // if (elem) {
+    //     console.log(`${animName} ${timingFunc} ${duration}`)
+    //     elem.style.animation = `${animName} ${timingFunc} ${duration}`;
+    // }
+
 }
-
-
+createAnimation(4,'f','ease',5);
