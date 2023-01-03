@@ -262,7 +262,7 @@ function createAnimation(
     animName: string,
     timingFunc: 'ease' | 'ease-out',
     duration: number,
-):void {
+): void {
 
     console.log(`${animName} ${timingFunc} ${duration}`)
 
@@ -273,4 +273,23 @@ function createAnimation(
     // }
 
 }
-createAnimation(4,'f','ease',5);
+
+// createAnimation(4, 'f', 'ease', 5);
+
+
+
+//Type aliases----------------------------------------------------------
+
+type AnimationTimingFunction = 'ease' | 'ease-out' | 'ease-in';
+type ID = string | number;
+
+function createAnimat(
+    id: ID,
+    timingFunc: AnimationTimingFunction,
+): void {
+    console.log(` ${id} - ${timingFunc} `);
+
+
+}
+
+createAnimat(5,'ease');
