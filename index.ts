@@ -199,7 +199,7 @@ const check = (r: { sys: number } | { user: number }): void => {
     if ('sys' in r) {
         console.log(r.sys);
     } else {
-        console.log(r.user);
+        // console.log(r.user);
     }
 }
 
@@ -213,9 +213,9 @@ function logH(x: string | Date) {
 //literal types----------------------------------------------------------
 
 
-let user: 'key' = 'key';
-// user = 'fg';
-user = 'key';
+// let user: 'key' = 'key';
+// // user = 'fg';
+// user = 'key';
 
 
 let msg: 'hello' = 'hello';
@@ -264,7 +264,7 @@ function createAnimation(
     duration: number,
 ): void {
 
-    console.log(`${animName} ${timingFunc} ${duration}`)
+    // console.log(`${animName} ${timingFunc} ${duration}`)
 
     // const elem = document.querySelector(`#${id}`) as HTMLElement;
     // if (elem) {
@@ -277,7 +277,6 @@ function createAnimation(
 // createAnimation(4, 'f', 'ease', 5);
 
 
-
 //Type aliases----------------------------------------------------------
 
 type AnimationTimingFunction = 'ease' | 'ease-out' | 'ease-in';
@@ -287,9 +286,34 @@ function createAnimat(
     id: ID,
     timingFunc: AnimationTimingFunction,
 ): void {
-    console.log(` ${id} - ${timingFunc} `);
-
+    // console.log(` ${id} - ${timingFunc} `);
 
 }
 
-createAnimat(5,'ease');
+createAnimat(5, 'ease');
+
+
+// Объектные литералы и аннотации функций
+// и оператор пересечения!
+
+// type Config = { protocol: 'http' | 'https'; port: 3000 | 3001 };
+// type Role = { role: string };
+// type ConfigWithRole = Config & Role;
+//
+//
+// const mainConfig: ConfigWithRole = {
+//     role: 'admin',
+//     protocol: 'http',
+//     port: 3000,
+// }
+// console.log(mainConfig)
+// const serverConfig: Config = {
+//     protocol: 'http',
+//     port: 3000,
+// }
+// const backConfig: Config = {
+//     protocol: 'https',
+//     port: 3001
+// }
+
+
